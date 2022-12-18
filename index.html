@@ -100,7 +100,7 @@
     <!-- <img src="images/lover.jpg" id="logo"> -->
 </div>
 <canvas class="canvas" width="1820" height="905"></canvas>
-<p id="qqq" class="text"  style="color: pink;font-size: 60px;">
+<p id="qqq" class="text"  style="color: pink;">
     相遇即是上上签
     <br/>
     <span id="span_dt_dt" ></span>
@@ -150,7 +150,11 @@
 }
 
     show_date_time();
+    if (isMobile() == true) {
+            var div = document.getElementById("qqq");
+            div.setAttribute("style", "font-size:60px");
 
+        }
 
 </script>
 <script>
