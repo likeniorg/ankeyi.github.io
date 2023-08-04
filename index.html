@@ -106,9 +106,10 @@
     <span id="span_dt_dt" ></span>
 </p>
 <script language="javascript">
-    function show_date_time() {
+  function show_date_time() {
         window.setTimeout("show_date_time()", 1000);
-        BirthDay = new Date("7/22/2022 23:00:00");//这个日期是可以修改的
+        // BirthDay = new Date("7/22/2022 23:00:00");//这个日期是可以修改的
+         BirthDay = new Date("7/22/2022 00:36:00");//这个日期是可以修改的
         today = new Date();
         timeold = (today.getTime() - BirthDay.getTime());
         sectimeold = timeold / 1000
@@ -121,7 +122,24 @@
         e_minsold = (e_hrsold - hrsold) * 60;
         minsold = Math.floor((e_hrsold - hrsold) * 60);
         seconds = Math.floor((e_minsold - minsold) * 60);
+      
+
         span_dt_dt.innerHTML = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+        if(seconds==0 && hrsold==0 && minsold==0 ){
+            var div = document.getElementById("qqq");
+          div.innerHTML=`
+          <p style="font-size:24px;margin: 0;">
+            &#129505;&#129505;&#129505;&#129505;&#129505;&#129505;&#129505;&#129505;&#129505;&#129505;&#129505;&#129505;&#129505;&#129505;
+</p>
+
+          Love jing's 365th day
+    <br>  <p style="font-size:24px;margin: 0;">
+        &#129505;&#129505;&#129505;&#129505;&#129505;&#129505;&#129505;&#129505;&#129505;&#129505;&#129505;&#129505;&#129505;&#129505;
+</p>
+
+    <span id="span_dt_dt"></span>`;
+    span_dt_dt.innerHTML = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒"; 
+}
     }
     function isMobile() {
     var userAgentInfo = navigator.userAgent;
