@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Pages on lnoBlog</title>
+        <link>https://example.com/page/</link>
+        <description>Recent content in Pages on lnoBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>lnoBlog</copyright>
+        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>归档</title>
+        <link>https://example.com/archives/</link>
+        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.com/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>关于</title>
+        <link>https://example.com/%E5%85%B3%E4%BA%8E/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.com/%E5%85%B3%E4%BA%8E/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>开源项目</title>
+        <link>https://example.com/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.com/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/</guid>
+        <description>&lt;h2 id=&#34;adminport&#34;&gt;adminPort&lt;/h2&gt;
+&lt;p&gt;vpn管理程序,负责客户端与服务端交互验证身份，验证通过后连接vpn访问外网&lt;br&gt;
+项目地址: &lt;a href=&#34;https://github.com/likeniorg/portAdmin&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/likeniorg/portAdmin&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/likeniorg/portAdmin&lt;/a&gt;&lt;/a&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;filechecking&#34;&gt;fileChecking&lt;/h2&gt;
+&lt;p&gt;快速记录当前路径或指定路径下全部文件的Hash值并保存，提供对比功能查看文件是否被篡改
+项目地址: &lt;a href=&#34;https://github.com/likeniorg/lnoFileChecking&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/likeniorg/lnoFileChecking&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/likeniorg/lnoFileChecking&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>搜索</title>
+        <link>https://example.com/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.com/search/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

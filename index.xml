@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>lnoBlog</title>
+        <link>https://example.com/</link>
+        <description>Recent content on lnoBlog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>lnoBlog</copyright>
+        <lastBuildDate>Sat, 17 Feb 2024 03:55:11 -0500</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>安卓手机内存优化</title>
+        <link>https://example.com/p/%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/</link>
+        <pubDate>Sat, 17 Feb 2024 03:55:11 -0500</pubDate>
+        
+        <guid>https://example.com/p/%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/</guid>
+        <description>&lt;p&gt;安卓手机出厂自带诸多不必要软件,删除后可以优化手机内存占用空间降低功耗，但通过常规手段无法删除部分应用，所以要通过adb删除&lt;br&gt;
+debian系统安装adb命令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install adb
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;centos系统安装adb命令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo yum install adb
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;安装成功后，手机打开开发者设置(各品牌步骤不同，自行搜索)，找到允许adb调试选项&lt;br&gt;
+然后电脑和手机通过数据线连接，命令行中输入adb命令，此时观察手机会出现是否允许adb调试选项，允许 &lt;br&gt;
+接下来通过命令删除软件&lt;br&gt;
+示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;adb shell pm uninstall -k --user &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;软件包名&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 删除小米快应用服务框架&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;adb shell pm uninstall -k --user &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; com.miui.hybrid
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 预装应用删除后恢复&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;adb shell cmd package install-existing &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;软件包名&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;最大的难度是怎么知道软件包名？ 不知道软件包名就无法通过adb卸载，此时推荐开源软件apps_Packages info，没有联网功能还能显示所有软件包名，十分安全。&lt;br&gt;
+可以通过f-droid.org官网下载，也可以&lt;a href=&#34;https://example.com/apps_PackagesInfo.apk&#34;&gt;点击此处下载&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;警告&#34;&gt;警告&lt;/h3&gt;
+&lt;p&gt;删除过程中建议谨慎操作，诸如服务框架之类的软件包名卸载后可能导致系统无法正常使用或无法开机，注意判别！操作前进行手机数据备份，避免误删某软件后数据消失&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Go解答</title>
+        <link>https://example.com/p/go%E8%A7%A3%E7%AD%94/</link>
+        <pubDate>Sat, 17 Feb 2024 03:52:30 -0500</pubDate>
+        
+        <guid>https://example.com/p/go%E8%A7%A3%E7%AD%94/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>归档</title>
+        <link>https://example.com/archives/</link>
+        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.com/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>关于</title>
+        <link>https://example.com/%E5%85%B3%E4%BA%8E/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.com/%E5%85%B3%E4%BA%8E/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>开源项目</title>
+        <link>https://example.com/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.com/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/</guid>
+        <description>&lt;h2 id=&#34;adminport&#34;&gt;adminPort&lt;/h2&gt;
+&lt;p&gt;vpn管理程序,负责客户端与服务端交互验证身份，验证通过后连接vpn访问外网&lt;br&gt;
+项目地址: &lt;a href=&#34;https://github.com/likeniorg/portAdmin&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/likeniorg/portAdmin&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/likeniorg/portAdmin&lt;/a&gt;&lt;/a&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;filechecking&#34;&gt;fileChecking&lt;/h2&gt;
+&lt;p&gt;快速记录当前路径或指定路径下全部文件的Hash值并保存，提供对比功能查看文件是否被篡改
+项目地址: &lt;a href=&#34;https://github.com/likeniorg/lnoFileChecking&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/likeniorg/lnoFileChecking&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/likeniorg/lnoFileChecking&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>搜索</title>
+        <link>https://example.com/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.com/search/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>
