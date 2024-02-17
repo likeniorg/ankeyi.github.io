@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=''>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='所有defer都会被执行吗 处于false分支的defer不会被执行
+多个defer执行顺序 defer归属函数即将返回时，延迟处理语句按defer逆序执行
+import后面最后一个元素是包名吗 import指定的是包的路径标识符。包名是代码中使用的标识符，通过导入路径标识 符来确定
+类型断言语法 Interface.(Type)
+类型转换语法 Type(expression)
+为什么Cgo能调用C模块 因为C和Go二进制接口规范(ABI)具有兼容性
+Go语言取反操作 ^x，不支持~x 为什么delect只能用来删map func delete(m map[Type]Type1, key Type) new和make的区别 new用于分配值类型(整数、浮点数、结构体等)的内存，并返回一个指向该类型零值的指针。 make用于创建切片、映射和通道等引用数据类型，并返回一个已经初始化后的实例。 他们的区别在于new只分配内存，并返回该类型的指针，但不会对该内存进行初始化，需要手动初始化比如
+1 2 m := new(map[string]int) m = make(map[string]int,5) 这些数据结构由于内部构造需要初始化，因此使用make用来初始化他们'>
 <title>Go解答</title>
 
 <link rel='canonical' href='https://example.com/p/go%E8%A7%A3%E7%AD%94/'>
 
 <link rel="stylesheet" href="/scss/style.min.abbd69b2908fdfcd5179898beaafd374514a86538d81639ddd2c58c06ae54e40.css"><meta property='og:title' content='Go解答'>
-<meta property='og:description' content=''>
+<meta property='og:description' content='所有defer都会被执行吗 处于false分支的defer不会被执行
+多个defer执行顺序 defer归属函数即将返回时，延迟处理语句按defer逆序执行
+import后面最后一个元素是包名吗 import指定的是包的路径标识符。包名是代码中使用的标识符，通过导入路径标识 符来确定
+类型断言语法 Interface.(Type)
+类型转换语法 Type(expression)
+为什么Cgo能调用C模块 因为C和Go二进制接口规范(ABI)具有兼容性
+Go语言取反操作 ^x，不支持~x 为什么delect只能用来删map func delete(m map[Type]Type1, key Type) new和make的区别 new用于分配值类型(整数、浮点数、结构体等)的内存，并返回一个指向该类型零值的指针。 make用于创建切片、映射和通道等引用数据类型，并返回一个已经初始化后的实例。 他们的区别在于new只分配内存，并返回该类型的指针，但不会对该内存进行初始化，需要手动初始化比如
+1 2 m := new(map[string]int) m = make(map[string]int,5) 这些数据结构由于内部构造需要初始化，因此使用make用来初始化他们'>
 <meta property='og:url' content='https://example.com/p/go%E8%A7%A3%E7%AD%94/'>
 <meta property='og:site_name' content='lnoBlog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-02-17T03:52:30-05:00'/><meta property='article:modified_time' content='2024-02-17T03:52:30-05:00'/>
 <meta name="twitter:title" content="Go解答">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content="所有defer都会被执行吗 处于false分支的defer不会被执行
+多个defer执行顺序 defer归属函数即将返回时，延迟处理语句按defer逆序执行
+import后面最后一个元素是包名吗 import指定的是包的路径标识符。包名是代码中使用的标识符，通过导入路径标识 符来确定
+类型断言语法 Interface.(Type)
+类型转换语法 Type(expression)
+为什么Cgo能调用C模块 因为C和Go二进制接口规范(ABI)具有兼容性
+Go语言取反操作 ^x，不支持~x 为什么delect只能用来删map func delete(m map[Type]Type1, key Type) new和make的区别 new用于分配值类型(整数、浮点数、结构体等)的内存，并返回一个指向该类型零值的指针。 make用于创建切片、映射和通道等引用数据类型，并返回一个已经初始化后的实例。 他们的区别在于new只分配内存，并返回该类型的指针，但不会对该内存进行初始化，需要手动初始化比如
+1 2 m := new(map[string]int) m = make(map[string]int,5) 这些数据结构由于内部构造需要初始化，因此使用make用来初始化他们">
     </head>
     <body class="
     article-page
@@ -242,7 +263,46 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#所有defer都会被执行吗">所有defer都会被执行吗</a></li>
+    <li><a href="#多个defer执行顺序">多个defer执行顺序</a></li>
+    <li><a href="#import后面最后一个元素是包名吗">import后面最后一个元素是包名吗</a></li>
+    <li><a href="#类型断言语法">类型断言语法</a></li>
+    <li><a href="#类型转换语法">类型转换语法</a></li>
+    <li><a href="#为什么cgo能调用c模块">为什么Cgo能调用C模块</a></li>
+    <li><a href="#go语言取反操作">Go语言取反操作</a></li>
+    <li><a href="#为什么delect只能用来删map">为什么delect只能用来删map</a></li>
+    <li><a href="#new和make的区别">new和make的区别</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -290,7 +350,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 0 分钟
+                    阅读时长: 1 分钟
                 </time>
             </div>
         
@@ -305,7 +365,41 @@
     <section class="article-content">
     
     
-    
+    <h2 id="所有defer都会被执行吗">所有defer都会被执行吗</h2>
+<p>处于false分支的defer不会被执行</p>
+<h2 id="多个defer执行顺序">多个defer执行顺序</h2>
+<p>defer归属函数即将返回时，延迟处理语句按defer逆序执行</p>
+<h2 id="import后面最后一个元素是包名吗">import后面最后一个元素是包名吗</h2>
+<p>import指定的是包的路径标识符。包名是代码中使用的标识符，通过导入路径标识
+符来确定</p>
+<h2 id="类型断言语法">类型断言语法</h2>
+<p>Interface.(Type)</p>
+<h2 id="类型转换语法">类型转换语法</h2>
+<p>Type(expression)</p>
+<h2 id="为什么cgo能调用c模块">为什么Cgo能调用C模块</h2>
+<p>因为C和Go二进制接口规范(ABI)具有兼容性</p>
+<h2 id="go语言取反操作">Go语言取反操作</h2>
+<pre><code>^x，不支持~x
+</code></pre>
+<h2 id="为什么delect只能用来删map">为什么delect只能用来删map</h2>
+<pre><code>func delete(m map[Type]Type1, key Type)
+</code></pre>
+<h2 id="new和make的区别">new和make的区别</h2>
+<p>new用于分配值类型(整数、浮点数、结构体等)的内存，并返回一个指向该类型零值的指针。
+make用于创建切片、映射和通道等引用数据类型，并返回一个已经初始化后的实例。
+他们的区别在于new只分配内存，并返回该类型的指针，但不会对该内存进行初始化，需要手动初始化比如</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl">    <span class="nx">m</span> <span class="o">:=</span> <span class="nb">new</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">m</span> <span class="p">=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这些数据结构由于内部构造需要初始化，因此使用make用来初始化他们</p>
+
 </section>
 
 
